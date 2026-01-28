@@ -1,0 +1,15 @@
+from build123d import *
+from ocp_vscode import show
+
+rad, rev = 6, 50
+
+with BuildPart() as ex36:
+    with BuildSketch() as ex36_sk:
+        with Locations((0, rev)):
+            Circle(rad)
+    revolve(axis=Axis.X, revolution_arc=180)
+    with BuildSketch() as ex36_sk2:
+        Rectangle(rad, rev)
+    extrude(until=Until.NEXT)
+
+show(ex36)

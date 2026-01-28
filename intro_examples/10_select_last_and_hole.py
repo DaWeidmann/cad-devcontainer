@@ -1,0 +1,11 @@
+from build123d import *
+from ocp_vscode import show
+
+length, width, thickness = 80.0, 60.0, 10.0
+
+with BuildPart() as ex10:
+    Box(length, width, thickness)
+    Hole(radius=width / 4)
+    fillet(ex10.edges(Select.LAST).group_by(Axis.Z)[-1], radius=2)
+
+show(ex10)
