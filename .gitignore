@@ -1,0 +1,8 @@
+# Exported files
+*.step
+*.stl
+*.3mf
+
+# Ignore workspace and export folders
+ws/
+export/
